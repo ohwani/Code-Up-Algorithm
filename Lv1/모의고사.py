@@ -1,4 +1,3 @@
-from utils.time_check import logging_time
 '''
 문제 설명
 수포자는 수학을 포기한 사람의 준말입니다. 수포자 삼인방은 모의고사에 수학 문제를 전부 찍으려 합니다. 수포자는 1번 문제부터 마지막 문제까지 다음과 같이 찍습니다.
@@ -19,7 +18,6 @@ answers	    return
 [1,2,3,4,5]	[1]
 [1,3,2,4,2]	[1,2,3]
 '''
-@logging_time
 def solution(answers):
     person1 = [1, 2, 3, 4, 5] * 2000
     person2 = [2, 1, 2, 3, 2, 4, 2, 5] * 1250
