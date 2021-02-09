@@ -37,3 +37,31 @@ def Efficiency_Failure_Solution(participant, completion):
             participant.pop(idx)
     answer = participant[0]
     return answer
+
+# colletions을 이용한 풀이
+import collections
+def Good_solution(participant, completion):
+    result = collections.Counter(participant) - collections.Counter(completion)
+    return list(result)[0]
+
+# hash를 이용해서 풀기 - hash의 key의 고유번호를 이용해서 풀기
+def Using_Hashfunction_Solution(participant, completion):
+    dict = {}
+    temp = 0
+    for part in participant:
+        dict[hash(part)] = part
+        temp += int(hash(part))
+    for com in completion:
+        temp -= int(hash(com))
+    answer = dict[temp]
+    return answer
+
+print(Using_Hashfunction_Solution(['leo', 'kiki', 'eden'],['eden', 'kiki']))
+
+
+
+
+
+
+
+
