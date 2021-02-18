@@ -32,3 +32,4 @@ def final_solution(board, moves):
                 break   # break가 첫번째 if문의 블록 속에 존재해야된다. 아니면 move에 대한 반복문이 초기화가 되지 않아서 이상하게 돈다..
 
     return answer
+
