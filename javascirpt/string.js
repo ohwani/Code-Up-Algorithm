@@ -102,3 +102,81 @@ function getRandomNumber (min, max) {
     return (random_number * (max-min)) + min
 }
 
+
+/*
+이제까지 성공하셨던 Assignment와는 조금 다른 유형입니다.
+
+그 동안에는 특정값을 구해서 return했다면,
+
+이번에는 인자로 받은 데이터를 조합해서, 구조를 바꿔서 리턴합니다.
+
+getData에 배열 세 개를 인자로 넘길 것이고,
+
+이 배열 세 개를 조합해서 하나의 새로운 객체를 만들 것입니다.
+
+getData는 세 개의 배열을 인자로 받는 함수입니다.
+
+salesArr: 날짜별 판매량
+ex) [["20190401", 34], ["20190402", 23], ["20190403", 29]]
+reviewArr: 날짜별 리뷰수
+ex) [["20190328", 3], ["20190401", 0], ["20190403", 1]]
+likeArr: 날짜별 좋아요수
+ex) [["20190328", 98], ["20190401", 102], ["20190403", 125]]
+위의 예시로 보여드린 배열은 단지 예일뿐,
+
+날짜별 판매량 배열은 365일치 요소가 들어있을 수도 있습니다.
+
+왜 각각 세 개의 배열을 하나의 객체로 구조를 바꿔야 할까요?
+
+위의 배열에서 4월 1일에 판매량, 리뷰수, 좋아요수를 확인하려면
+
+세 개의 배열을 각각 for문으로 반복해서 날짜를 확인해야 하므로 좋은 구조의 데이터라고 할 수 없습니다.
+
+(날짜가 365일이라고 하면, 세 개의 배열이 각자 365번 돌아야 하니까요)
+
+그래서 세 개의 배열을 사용하기 좋게 객체로 바꿀 것입니다.
+
+객체는 프로퍼티명으로 바로 접근 가능하니까,
+
+날짜만 알면 반복문을 돌지 않아도 바로 데이터를 얻을 수 있습니다.
+
+그래서 객체의 형태로 데이터 구조를 바꾸려는 것입니다.
+
+다음 요구사항을 충족하는 객체를 만들어서 return 해주세요.
+
+objData가 갖고 있는 property는 3개 입니다.
+
+sumAmount: 총 판매량
+sumReview: 총 리뷰개수
+sumLike: 총 좋아요수
+
+*/
+function getData(salesArr,reviewArr,likeArr){
+    let sumAmount = 0;
+    let sumReview = 0;
+    let sumLike = 0;
+    
+    for(i=0; i < salesArr.length; i++){
+      let sales = salesArr[i][1];
+      sumAmount += sales;
+    }
+    
+    for(i=0; i < reviewArr.length; i++){
+    let reviews = reviewArr[i][1];
+      sumReview += reviews;
+    }
+    
+    for(i=0; i < likeArr.length; i++){
+      let likes = likeArr[i][1];
+      sumLike += likes;
+    }
+  
+    objData = {};
+    
+    objData['sumAmount'] = sumAmount;
+    objData['sumReview'] = sumReview;
+    objData['sumLike'] = sumLike;
+    
+    return objData
+  
+  }
