@@ -37,3 +37,68 @@ function sliceCityFromAddress(address) {
     }
 
 sliceCityFromAddress("서울특별시 강남구 테헤란로 427 위워크타워")
+
+
+/*
+우리나라는 국민연금을 만 65세 부터 받을 수 있습니다.
+
+nationalPensionRemainingYearCount 함수를 구현해주세요.
+
+nationalPensionRemainingYearCount 는 age_string 이라는 input을 받습니다.
+
+age_string은 나이 값인데 string형 값으로 되어 있습니다.
+
+주어진 나이부터 몇년이 지나야 국민연금을 받을수 있는지 리턴해주세요.
+
+리턴 값으로는 다음 문장 처럼 리턴해야 합니다.
+
+"앞으로 20년 남으셨습니다"
+"앞으로 20년 남으셨습니다"
+예를 들어, age_string 값이 다음과 같다면:
+
+"35"
+"35"
+리턴 값은 다음과 같아야 합니다.
+
+"앞으로 30년 남으셨습니다"
+
+Number형에서 String형으로 변환하고 싶을 수도 있습니다. 어떻게 할까요?
+a = 123 + ""
+typeof(a) // string
+
+String형에서 Number형으로 변환하고 싶을 수도 있습니다. 어떻게 할까요?
+b = "123"-0 
+typeof(b) // number
+*/
+
+function nationalPensionRemainingYearCount(age_string) {
+    // Your code here
+    age = age_string-0;
+    if (age < 65){
+      let remaining_year = 65-age; 
+      return "앞으로 " + remaining_year + "년 남으셨습니다" 
+    }else{
+      return "앞으로 0년 남으셨습니다" 
+    } 
+  }
+
+/*
+앞으로 랜덤함수를 쓸 일이 정말 많습니다.
+
+그런데 Math.random()으로는 내가 원하는 범위의 랜덤수를 얻을 수가 없습니다.
+
+항상 0.0000000000000000에서 0.9999999999999999 사이 값에서만 return해주기 때문이죠.
+
+최소(min), 최대값(max)을 받아 그 사이의 랜덤수를 return하는 함수를 구현해주세요.
+
+함수는 짧지만, 이번에는 수학의 뇌를 조금 써야 하는 assignment입니다.
+Tip!
+
+이 문제는 구글에서 검색해서 풀고 이해하는 방법을 추천드립니다 :)
+*/
+
+function getRandomNumber (min, max) {
+    let random_number = Math.random();
+    return (random_number * (max-min)) + min
+}
+
